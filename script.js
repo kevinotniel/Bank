@@ -104,7 +104,7 @@ const displayMovements = function (acc, sort = false) {
 
   const movs = sort ? acc.slice().sort((a, b) => a - b) : movements;
 
-  movs.forEach(function (mov, i) {
+  acc.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -390,22 +390,22 @@ movements.forEach(function(move, i, arr) {
 
 // calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
 
-const totalDepositsUSD = movements
-  .filter(mov => mov > 0)
-  .map(deposit => deposit * 1.1)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(totalDepositsUSD);
+// const totalDepositsUSD = movements
+//   .filter(mov => mov > 0)
+//   .map(deposit => deposit * 1.1)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(totalDepositsUSD);
 
-const calcAverageHumanAge = ages => {
-  const humanAge = ages
-    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
-    .filter(age => age >= 18)
-    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
-  return humanAge;
-};
-console.log([5, 2, 4, 1, 15, 8, 3]);
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
-console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+// const calcAverageHumanAge = ages => {
+//   const humanAge = ages
+//     .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+//     .filter(age => age >= 18)
+//     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+//   return humanAge;
+// };
+// console.log([5, 2, 4, 1, 15, 8, 3]);
+// console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
 
 /*  
 1. Calculate the dog age in human years using the following formula: if the dog is <= 2 years old, humanAge = 2 * dogAge. If the dog is > 2 years old, humanAge = 16 + dogAge * 4.
@@ -423,11 +423,11 @@ GOOD LUCK 😀
 // TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 // TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
-const findMethod = movements.find(acc => acc < 0);
-console.log(findMethod);
-console.log(accounts);
-const findMethod2 = accounts.find(acc => acc.username === 'ss');
-console.log(findMethod2);
+// const findMethod = movements.find(acc => acc < 0);
+// console.log(findMethod);
+// console.log(accounts);
+// const findMethod2 = accounts.find(acc => acc.username === 'ss');
+// console.log(findMethod2);
 
 // let currentAccount
 
@@ -453,53 +453,53 @@ console.log(findMethod2);
 
 // })
 
-const accBalance = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(accBalance);
+// const accBalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(accBalance);
 
-const accBalance2 = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(accBalance2);
+// const accBalance2 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(accBalance2);
 
-const bal = [1, 1, [1, 2, [12, 23]], [2, 3], 3, 1];
-console.log(bal.flat(2));
+// const bal = [1, 1, [1, 2, [12, 23]], [2, 3], 3, 1];
+// console.log(bal.flat(2));
 
-labelBalance.addEventListener('click', function () {
-  const movementsUI = Array.from(
-    document.querySelectorAll('.movements__value'),
-    el => Number(el.textContent.replace('€', ''))
-  );
-  console.log(movementsUI);
-});
+// labelBalance.addEventListener('click', function () {
+//   const movementsUI = Array.from(
+//     document.querySelectorAll('.movements__value'),
+//     el => Number(el.textContent.replace('€', ''))
+//   );
+//   console.log(movementsUI);
+// });
 
-const convertTitleCase = function (title) {
-  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+// const convertTitleCase = function (title) {
+//   const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
-  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+//   const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
 
-  const titleCase = title
-    .toLowerCase()
-    .split(' ')
-    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
-    .join(' ');
+//   const titleCase = title
+//     .toLowerCase()
+//     .split(' ')
+//     .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+//     .join(' ');
 
-  return capitalize(titleCase);
-};
+//   return capitalize(titleCase);
+// };
 
-console.log(convertTitleCase('this is a nice title'));
-console.log(convertTitleCase('this is a LONG title but not too long'));
-console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+// console.log(convertTitleCase('this is a nice title'));
+// console.log(convertTitleCase('this is a LONG title but not too long'));
+// console.log(convertTitleCase('and here is another title with an EXAMPLE'));
 
-let arr = ['a', 'b', 'c', 'd', 'e']
+// let arr = ['a', 'b', 'c', 'd', 'e']
 
-console.log(arr.slice(2));
-console.log(arr.slice(-1));
+// console.log(arr.slice(2));
+// console.log(arr.slice(-1));
 
-console.log(arr.splice(1, 3));
-console.log(arr);
+// console.log(arr.splice(1, 3));
+// console.log(arr);
 
-console.log(arr.reverse());
-console.log([...arr]);
+// console.log(arr.reverse());
+// console.log([...arr]);
